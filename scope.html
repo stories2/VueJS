@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            <my-component1></my-component1>
+            <my-component2></my-component2>
+        </div>
+        <script src="js/vue.js"></script>
+        <script>
+            
+            var cmp1 = {
+                template: '<div>Hell1 {{ cnt }}</div>',
+                data: function() {
+                    return {
+                        cnt: 100
+                    }
+                }
+            }
+            var cmp2 = {
+                template: '<div>Hell2 {{ cnt }}</div>',
+                data: function() {
+                    return {
+                        cnt: cmp1.data.cnt
+                    }
+                }
+            }
+
+            new Vue({
+                el: '#app',
+                components: {
+                    'my-component1': cmp1,
+                    'my-component2': cmp2
+                }
+            })
+        </script>
+    </body>
+</html>
