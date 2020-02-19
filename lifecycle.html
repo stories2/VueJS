@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            {{message}}
+        </div>
+        <script src="js/vue.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue.js!'
+                },
+                beforeCreate: function() {
+                    console.log('beforeCreate')
+                },
+                created: function() {
+                    console.log('created')
+                },
+                mounted: function() {
+                    console.log('mounted')
+
+                    this.message = 'Shit Vue.js!'
+                },
+                updated: function() {
+                    console.log('updated')
+                }
+            })
+        </script>
+    </body>
+</html>
