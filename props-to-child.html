@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            {{ msg }}
+            <child-cmp v-bind:message="msg"></child-cmp>
+        </div>
+        <script src="js/vue.js"></script>
+        <script>
+            
+            var cmp1 = {
+                props: ['message'],
+                template: '<div>Hell1 {{ message }}</div>',
+            }
+
+            new Vue({
+                el: '#app',
+                data:  function() {
+                    return {
+                        msg: 'Hell World'
+                    }
+                },
+                components: {
+                    'child-cmp': cmp1
+                }
+            })
+        </script>
+    </body>
+</html>
