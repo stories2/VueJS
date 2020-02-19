@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            <child-cmp ></child-cmp>
+        </div>
+        <script src="js/vue.js"></script>
+        <script>
+
+            const eventBus = new Vue();
+            const cmp1 = {
+                template: '<div>test</div>',
+                created: function() {
+                    eventBus.$emit('go', 'hello');
+                }
+            }
+
+            new Vue({
+                el: '#app',
+                created: function() {
+                    eventBus.$on('go', (data) => {
+                        console.log('go', data);
+                    })
+                },
+                components: {
+                    'child-cmp': cmp1
+                }
+            })
+        </script>
+    </body>
+</html>
