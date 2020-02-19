@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            {{ msg }}
+            <child-cmp v-on:call-event="parentFunc"></child-cmp>
+        </div>
+        <script src="js/vue.js"></script>
+        <script>
+            
+            var cmp1 = {
+                template: '<button v-on:click="innerFunc">click</button>',
+                methods: {
+                    innerFunc: function() {
+                        this.$emit('call-event');
+                    }
+                }
+            }
+
+            new Vue({
+                el: '#app',
+                methods: {
+                    parentFunc: function() {
+                        console.log('parentFunc called')
+                    }
+                },
+                components: {
+                    'child-cmp': cmp1
+                }
+            })
+        </script>
+    </body>
+</html>
