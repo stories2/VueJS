@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            <h1>Nested Router</h1>
+            <router-view></router-view>
+        </div>
+        <script src="js/vue.js"></script>
+        <script src="js/vue-router.js"></script>
+        <script>
+            const user = {
+                template: `
+                    <div>
+                        User
+                        <router-view></router-view>
+                    </div>
+                `
+            }
+
+            const userProfile = {
+                template: '<div>Profile</div>'
+            }
+
+            const userPost = {
+                template: '<div>Post</div>'
+            }
+
+            const routes = [
+                {
+                    path: '/user',
+                    component: user,
+                    children: [
+                        {
+                            path: 'post',
+                            component: userPost
+                        },
+                        {
+                            path: 'profile',
+                            component: userProfile
+                        }
+                    ]
+                }
+            ];
+
+            const router = new VueRouter({
+                routes
+            });
+
+            const app = new Vue({
+                router
+            }).$mount('#app')
+        </script>
+    </body>
+</html>
