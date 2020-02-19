@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            <global-component></global-component>
+            <local-component></my-component>
+        </div>
+        <div id="app2">
+            <global-component></global-component>
+            <local-component></my-component>
+        </div>
+        <script src="js/vue.js"></script>
+        <script>
+
+            const cmp = {
+                template: '<div>Local</div>'
+            }
+
+            Vue.component('global-component', {
+                template: '<div>Global</div>'
+            })
+
+            new Vue({
+                el: '#app',
+                components: {
+                    'local-component': cmp
+                }
+            })
+
+            new Vue({
+                el: '#app2'
+            })
+        </script>
+    </body>
+</html>
