@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <body>
+        <div id="app">
+            <my-component></my-component>
+        </div>
+        <script src="js/vue.js"></script>
+        <script>
+
+            const cmp = {
+                template: '<div>Hell</div>'
+            }
+
+            new Vue({
+                el: '#app',
+                components: {
+                    'my-component': cmp
+                }
+            })
+        </script>
+    </body>
+</html>
