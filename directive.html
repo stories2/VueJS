@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <head>
+        <style>
+            .style-class {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h1>directive</h1>
+            <div v-if="flag">flag: true</div>
+            <div v-if="!flag">flag: !true</div>
+            <ul>
+                <li v-for="system in systems">{{ system }}</li>
+            </ul>
+            <p v-show="flag">flag show</p>
+            <h5 v-bind:id="uid">uid {{ uid }} bind</h5>
+            <button v-on:click="popup">asd</button>
+        </div>
+        <script src="js/vue.js"></script>
+        <script src="js/vue-router.js"></script>
+        <script src="js/axios.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    flag: true,
+                    systems: ['android', 'ios', 'window'],
+                    uid: 10
+                },
+                methods: {
+                    popup : function() {
+                        alert('asdf');
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
