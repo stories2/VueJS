@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <head>
+        <style>
+            .style-class {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h1>bind js</h1>
+            <div>{{ message }}</div>
+            <div>{{ message + ' Shit'}}</div>
+            <div>{{ message.split('').reverse().join('') }}</div>
+        </div>
+        <script src="js/vue.js"></script>
+        <script src="js/vue-router.js"></script>
+        <script src="js/axios.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hell World'
+                }
+            })
+        </script>
+    </body>
+</html>
