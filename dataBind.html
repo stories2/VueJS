@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <head>
+        <style>
+            .style-class {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <h1>bind data</h1>
+            <div v-bind:id='idVal'>asdf</div>
+            <div v-bind:class='classVal'>asdf</div>
+            <div v-bind:style='styleVal'>asdf</div>
+        </div>
+        <script src="js/vue.js"></script>
+        <script src="js/vue-router.js"></script>
+        <script src="js/axios.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    idVal: 'thisIsID',
+                    classVal: 'style-class',
+                    styleVal: 'color: red'
+                }
+            })
+        </script>
+    </body>
+</html>
