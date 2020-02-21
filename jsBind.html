@@ -12,6 +12,7 @@
             <div>{{ message }}</div>
             <div>{{ message + ' Shit'}}</div>
             <div>{{ message.split('').reverse().join('') }}</div>
+            <div>{{ reversedMsg }}</div>
         </div>
         <script src="js/vue.js"></script>
         <script src="js/vue-router.js"></script>
@@ -21,6 +22,11 @@
                 el: '#app',
                 data: {
                     message: 'Hell World'
+                },
+                computed: {
+                    reversedMsg: function() {
+                        return this.message.split('').reverse().join('');
+                    }
                 }
             })
         </script>
