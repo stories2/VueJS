@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <head>
+    </head>
+    <body>
+        <div id="app">
+            <input v-model="message">
+        </div>
+        <script src="js/vue.js"></script>
+        <script src="js/vue-router.js"></script>
+        <script src="js/axios.js"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hell World'
+                },
+                watch: {
+                    message: function(msg) {
+                        console.log('msg change', msg);
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
