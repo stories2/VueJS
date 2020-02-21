@@ -1,9 +1,25 @@
 <template>
-    <div>TodoList</div>
+    <section>
+        <ul>
+            <li v-for="item in todoItems">{{ item }}</li>
+        </ul>
+    </section>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            todoItems: []
+        }
+    },
+    created() {
+        if (localStorage.length > 0) {
+            for (var i = 0; i < localStorage.length; i ++) {
+                this.todoItems.push(localStorage.key(i))
+            }
+        }
+    }
 }
 </script>
 
